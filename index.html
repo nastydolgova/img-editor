@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="file-upload-section" onclick="selectImage()">
+        <input type="file" id="foto-file">
+        Select Image
+    </div>
+    <div class="upper-buttons">
+        <button class="operation-btn" onclick="crop()">Crop</button>
+        <button class="operation-btn" onclick="flipVertically()">Flip</button>
+        <button class="operation-btn operation-btn--range">
+            Rotate
+            <input class="input__range" type="range" id="rotate-range" value="0" min="0" max="360" onchange="rotate(this)">
+        </button>
+    </div>
+    <div class="img-container">
+        <img id="foto-image" alt="" class="image">
+    </div>
+    <div class="down-buttons">
+        <button class="operation-btn" onclick="makeGrayScale()">GrayScale</button>
+        <button class="operation-btn" onclick="makeBright()">Brighter</button>
+        <button class="operation-btn" onclick="makeDark()">Darker</button>
+        <button class="operation-btn" onclick="makeBlur()">Blur</button>
+        <button class="operation-btn" onclick="makeEmboss()">Emboss</button>
+        <button class="operation-btn" onclick="makeSharp()">Sharp</button>
+        <input type="color" id="color-picker" value="#000000" oninput="makeColorize(this)">
+        <button class="operation-btn" onclick="openColorpicker()">Colorize</button>
+        <input type="color" id="colorize-color-picker" value="#000000" oninput="applyColorFilter(this)">
+        <button class="operation-btn" onclick="openColorFilterPicker()">Color Filter</button>
+
+        <button class="operation-btn download-btn" onclick="download()">Download</button>
+    </div>
+
+</body>
+<script src="foto.min.js"></script>
+<script src="main.js"></script>
+</html>
+
+<!-- https://github.com/kousik19/foto.js -->
